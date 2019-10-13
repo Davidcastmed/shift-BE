@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davidcastmed/shift-BE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Davidcastmed/shift-BE/issues"
+  },
+  "homepage": "https://github.com/Davidcastmed/shift-BE#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

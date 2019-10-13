@@ -1,68 +1,26 @@
-const path = require('path');
 const express = require('express');
-
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 
-app.get('', (req, res) => {
-  res.render('index', {
-    title: 'Weather',
-    name: 'Andrew Mead'
-  });
+app.get('/users/:userId/books/:bookId', (req, res) => {
+  // /users/5/books/3
+  res.send(req.params);
 });
 
-app.get('/about', (req, res) => {
-  res.render('about', {
-    title: 'About Me',
-    name: 'Andrew Mead'
-  });
+app.get('/', (req, res) => {
+  res.send('Hello World!');
 });
 
-app.get('/help', (req, res) => {
-  res.render('help', {
-    helpText: 'This is some helpful text.',
-    title: 'Help',
-    name: 'Andrew Mead'
-  });
+app.post('/', (req, res) => {
+  res.send('Got a POST request');
 });
 
-app.get('/weather', (req, res) => {
-  if (!req.query.address) {
-    return res.send({
-      error: 'You must provide an address!'
-    });
-  }
+app.put('/user', (req, res) => {
+  res.send('Got a PUT request at /user');
 });
 
-app.get('/products', (req, res) => {
-  if (!req.query.search) {
-    return res.send({
-      error: 'You must provide a search term'
-    });
-  }
-
-  console.log(req.query.search);
-  res.send({
-    products: []
-  });
+app.delete('/user', (req, res) => {
+  res.send('Got a DELETE request at /user');
 });
 
-app.get('/help/*', (req, res) => {
-  res.render('404', {
-    title: '404',
-    name: 'Andrew Mead',
-    errorMessage: 'Help article not found.'
-  });
-});
-
-app.get('*', (req, res) => {
-  res.render('404', {
-    title: '404',
-    name: 'Andrew Mead',
-    errorMessage: 'Page not found.'
-  });
-});
-
-app.listen(port, () => {
-  console.log('Server is up on port ' + port);
-});
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
