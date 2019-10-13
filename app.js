@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.get('/users/:userId/books/:bookId', (req, res) => {
   // /users/5/books/3
   res.send(req.params);
+  console.log(req.params.userId);
 });
 
 app.get('/', (req, res) => {
