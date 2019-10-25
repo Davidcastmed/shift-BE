@@ -1,3 +1,6 @@
+//https://cast-shift-be.herokuapp.com/
+//https://git.heroku.com/cast-shift-be.git
+
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
